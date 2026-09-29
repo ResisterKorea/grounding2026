@@ -131,6 +131,8 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .footer-right { text-align: right; }
 .site-footer-home { align-items: center; gap: 24px; grid-template-columns: 1fr 1.5fr 1.35fr; }
 .site-footer-home .footer-details { text-align: center; }
+.footer-contact { display: flex; gap: 18px; justify-content: center; margin-top: 8px; }
+.footer-contact a { border-bottom: 1px solid currentColor; }
 .site-footer-home .logo-strip { border: 0; grid-column: auto; padding: 0; }
 .site-footer-home .logo-strip img { max-height: 36px; max-width: min(100%, 105px); }
 .site-footer-home .logo-strip .logo-resister { max-height: 46px; max-width: min(100%, 120px); }
@@ -289,6 +291,7 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 	.footer-right { grid-column: 1 / -1; text-align: left; }
 	.site-footer-home { align-items: center; column-gap: 18px; grid-template-columns: 1fr 1fr; row-gap: 22px; }
 	.site-footer-home .footer-details { grid-column: 2; grid-row: 1; text-align: left; }
+	.footer-contact { justify-content: flex-start; }
 	.site-footer-home .logo-strip { grid-column: 1 / -1; grid-row: 2; }
 	.site-footer-home .logo-strip img { max-height: 30px; max-width: min(100%, 72px); }
 	.site-footer-home .logo-strip .logo-resister { max-height: 38px; max-width: min(100%, 82px); }
