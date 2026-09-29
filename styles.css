@@ -191,6 +191,7 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .program-media-multi { align-items: start; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .program-media figure { margin: 0; }
 .program-media img, .program-media video { display: block; height: auto; max-height: 80vh; object-fit: contain; object-position: left center; width: 100%; }
+.program-media-centered img { margin-inline: auto; max-width: 100%; width: auto; }
 .program-media video { aspect-ratio: 1080 / 1350; background: var(--black); max-height: none; object-fit: contain; width: min(100%, 560px, 64vh); }
 .program-intro { display: grid; gap: 8vw; grid-template-columns: .8fr 1.4fr; margin: auto; max-width: 1240px; padding: 100px 5vw 130px; }
 .program-intro:has(+ .program-media-after) { padding-bottom: 60px; }
