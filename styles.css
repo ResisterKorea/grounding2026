@@ -12,7 +12,10 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--black); font-family: var(--english); }
-:lang(ko), .korean { font-family: var(--korean); }
+/* Korean pages: every non-display (Crimson) text switches to Gowun Batang; Rubik Dirt titles stay as they are. */
+html[lang="ko"] { --english: var(--korean); }
+[lang="ko"], .korean { font-family: var(--korean); }
+[lang="en"] { --english: "Crimson Text", Georgia, serif; font-family: var(--english); }
 main { display: flex; flex-direction: column; }
 main > * { min-width: 0; }
 main > .hero { order: 1; }
@@ -34,6 +37,11 @@ h1, h2, h3, p { margin-top: 0; }
 .wordmark-mark { align-items: center; background: var(--green); border: 2px solid var(--black); border-radius: 50%; display: inline-flex; font-family: var(--display); font-size: 19px; height: 36px; justify-content: center; margin-right: 9px; width: 36px; }
 .site-nav { display: flex; font-family: var(--english); font-size: 15px; gap: 32px; margin-left: auto; margin-right: 40px; }
 .site-nav a:hover, .text-link:hover { color: var(--blue); }
+.lang-switch { align-items: center; display: flex; font-family: var(--english); font-size: 14px; gap: 6px; letter-spacing: .06em; }
+.lang-switch a { opacity: .55; }
+.lang-switch a:hover { color: var(--blue); opacity: 1; }
+.lang-switch a[aria-current="page"] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.lang-switch span { opacity: .55; }
 .button { align-items: center; display: inline-flex; font-family: var(--english); font-size: 14px; font-weight: 700; gap: 20px; padding: 13px 17px; text-transform: uppercase; }
 .button span { font-size: 18px; line-height: .7; }
 .button-dark { background: var(--black); color: var(--white); }
@@ -173,6 +181,7 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .program-hero h1 { font-size: clamp(58px, 8vw, 112px); margin: 28px 0; max-width: 1050px; }
 .program-hero h1:has(+ .program-subtitle) { margin-bottom: 10px; }
 .program-subtitle { font-family: var(--english); font-size: clamp(22px, 2.2vw, 30px); font-style: italic; line-height: 1.3; margin: 0 0 28px; max-width: 900px; }
+.program-subtitle:lang(ko) { font-family: var(--korean); font-style: normal; }
 .program-meta { display: flex; flex-wrap: wrap; gap: 16px 48px; margin-top: 38px; }
 .program-meta p { font-size: 17px; line-height: 1.4; margin: 0; }
 .program-meta strong { display: block; font-family: var(--english); font-size: 11px; font-weight: 400; margin-bottom: 5px; text-transform: uppercase; }
@@ -186,6 +195,10 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .program-media-after { padding-bottom: 130px; padding-top: 0; }
 .program-intro-copy { font-size: 22px; line-height: 1.55; max-width: 720px; }
 .program-intro-copy p:last-child { margin-bottom: 0; }
+.program-intro-list { list-style: none; margin: 20px 0; padding: 0; }
+.program-intro-list li { padding-left: 1.2em; position: relative; }
+.program-intro-list li + li { margin-top: 8px; }
+.program-intro-list li::before { color: var(--blue); content: "\2014"; left: 0; position: absolute; }
 .program-intro .program-apply { grid-column: 2; justify-self: start; margin-top: -4vw; }
 .program-intro:has(+ .program-flow) { padding-bottom: 70px; }
 .program-flow { border-top: 1px solid var(--line); display: grid; gap: 8vw; grid-template-columns: .8fr 1.4fr; margin: auto; max-width: 1240px; padding: 70px 5vw 130px; }
@@ -195,6 +208,7 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .flow-meta { align-items: baseline; display: flex; font-family: var(--english); font-size: 14px; gap: 16px; letter-spacing: .06em; margin: 0 0 8px; text-transform: uppercase; }
 .flow-num { color: var(--blue); }
 .flow-list h3 { font-family: var(--display); font-size: 28px; font-weight: 400; letter-spacing: -.03em; line-height: 1.15; margin: 0 0 12px; }
+.flow-list h3:lang(ko) { font-family: var(--korean); font-size: 23px; font-weight: 700; letter-spacing: 0; line-height: 1.4; }
 .flow-list li > p:not(.flow-meta) { font-size: 19px; line-height: 1.55; margin: 0; }
 .flow-list li > p:not(.flow-meta) + p { margin-top: 14px; }
 .flow-list .flow-questions { font-size: 19px; line-height: 1.5; list-style: none; margin: 12px 0 0; padding: 0; }
@@ -207,6 +221,7 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .flow-list li:has(.flow-text):first-child { padding-top: 0; }
 .flow-day + .flow-day { margin-top: 56px; }
 .flow-day-title { border-bottom: 1px solid var(--black); display: flex; flex-wrap: wrap; font-family: var(--display); font-size: 34px; gap: 6px 18px; align-items: baseline; margin: 0 0 26px; padding-bottom: 12px; }
+.flow-day-title:lang(ko) { font-family: var(--korean); font-size: 25px; font-weight: 700; letter-spacing: 0; line-height: 1.4; }
 .flow-day-title span { color: var(--blue); font-family: var(--english); font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
 .program-intro-copy .artist-links { font-size: 16px; margin-top: 24px; }
 .program-intro-copy .intro-lede { font-size: 26px; font-style: italic; line-height: 1.4; }
@@ -215,6 +230,16 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .program-notes dt { color: var(--blue); font-family: var(--english); font-size: 14px; letter-spacing: .06em; padding-top: 4px; text-transform: uppercase; }
 .program-notes dd { font-size: 19px; line-height: 1.5; margin: 0; }
 .flow-place { color: var(--blue); display: block; font-size: 16px; letter-spacing: .02em; margin-top: 2px; }
+.program-text-body { font-size: 20px; line-height: 1.6; max-width: 720px; }
+.program-text-body h3 { font-family: var(--display); font-size: 34px; font-weight: 400; letter-spacing: -.03em; line-height: 1.15; margin: 0 0 10px; }
+.program-text-body h3:lang(ko) { font-family: var(--korean); font-size: 25px; font-weight: 700; letter-spacing: 0; line-height: 1.4; }
+.program-byline { color: var(--blue); font-family: var(--english); font-size: 14px; letter-spacing: .06em; margin: 0 0 22px; text-transform: uppercase; }
+.program-work p:not(.program-byline) { margin: 0; }
+.program-work p:not(.program-byline) + p { margin-top: 18px; }
+.program-work + .program-work { margin-top: 80px; }
+.program-work-figure { margin: 40px 0 0; }
+.program-work-figure img { display: block; height: auto; width: 100%; }
+.program-work-figure figcaption { color: var(--blue); font-size: 15px; margin-top: 10px; }
 .visually-hidden { clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
 .program-page-footer { align-items: center; background: var(--white); display: flex; justify-content: space-between; padding: 28px 5vw; }
 .program-page-footer p { font-size: 12px; margin: 0; text-transform: uppercase; }
@@ -305,6 +330,9 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 	.flow-day-title { font-size: 28px; }
 	.flow-list li > p.flow-text { font-size: 18px; }
 	.program-intro-copy .intro-lede { font-size: 22px; }
+	.program-text-body { font-size: 18px; margin-top: 30px; }
+	.program-text-body h3 { font-size: 28px; }
+	.program-work + .program-work { margin-top: 60px; }
 	.program-notes div { display: block; }
 	.program-notes dd { font-size: 17px; }
 	.program-page h1 { overflow-wrap: anywhere; hyphens: auto; }
