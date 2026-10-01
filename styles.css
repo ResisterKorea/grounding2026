@@ -233,6 +233,8 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .program-notes div { display: grid; gap: 4px 24px; grid-template-columns: 130px minmax(0, 1fr); }
 .program-notes dt { color: var(--blue); font-family: var(--english); font-size: 14px; letter-spacing: .06em; padding-top: 4px; text-transform: uppercase; }
 .program-notes dd { font-size: 19px; line-height: 1.5; margin: 0; }
+.program-notes .participant-options { margin: 6px 0; }
+.program-notes .participant-limit { font-size: .9em; margin: 6px 0 0; }
 .flow-place { color: var(--blue); display: block; font-size: 16px; letter-spacing: .02em; margin-top: 2px; }
 .program-text-body { font-size: 20px; line-height: 1.6; max-width: 720px; }
 .program-text-body h3 { font-family: var(--display); font-size: 34px; font-weight: 400; letter-spacing: -.03em; line-height: 1.15; margin: 0 0 10px; }
