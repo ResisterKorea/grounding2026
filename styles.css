@@ -102,6 +102,7 @@ h2 { font-family: var(--display); font-size: clamp(48px, 6vw, 84px); font-weight
 .program-detail em { color: var(--blue); font-style: normal; font-weight: 700; }
 .program-detail em a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
 .program-detail em a:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
+.schedule-cancellation { color: #8b2424; display: inline-block; font-size: .9em; font-weight: 700; }
 .exhibition-item h3 { max-width: 700px; }
 .week-arrow { font-size: 20px; }
 .visit { background: var(--green); display: grid; gap: 10vw; grid-template-columns: 1.15fr 1fr; margin: 0; max-width: none; padding-left: 12vw; padding-right: 12vw; width: 100%; }
@@ -188,6 +189,7 @@ address { font-family: var(--english); font-size: 27px; font-style: normal; line
 .program-meta { display: flex; flex-wrap: wrap; gap: 16px 48px; margin-top: 38px; }
 .program-meta p { font-size: 17px; line-height: 1.4; margin: 0; }
 .program-meta strong { display: block; font-family: var(--english); font-size: 11px; font-weight: 400; margin-bottom: 5px; text-transform: uppercase; }
+.program-cancellation { background: var(--white); border-left: 4px solid var(--blue); font-size: 18px; margin: 24px 0 0; max-width: 760px; padding: 12px 16px; }
 .program-media { box-sizing: border-box; display: grid; gap: 24px; margin: 0 auto; max-width: 1240px; padding: 80px 5vw 0; width: 100%; }
 .program-media-multi { align-items: start; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .program-media figure { margin: 0; }
